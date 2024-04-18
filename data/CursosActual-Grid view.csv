@@ -1,0 +1,45 @@
+﻿CursosActual_ID,Nombre del Curso,Profesores Asignados,Tipologia,microCompetencias_updated
+PA1-ALG,Algebra Lineal I,,Ciclo básico,
+PA2-ANÁ,Análisis Númerico I,Henry Arguello Fuentes,Algoritmos y procesamiento de señales,"neo_uC1,neo_uC2,neo_uC3,neo_uC4,neo_uC5,neo_uC6,neo_uC7,neo_uC8,neo_uC9,neo_uC10,neo_uC11,neo_uC12,neo_uC13,neo_uC14,neo_uC15,neo_uC16,neo_uC17,neo_uC18,neo_uC19,neo_uC20,neo_uC21,neo_uC22,neo_uC23,neo_uC24,neo_uC25,neo_uC26,neo_uC27,neo_uC28,neo_uC29,neo_uC30,neo_uC31,neo_uC32"
+PA3-ARQ,Arquitectura de computadores,Carlos Jaime Barrios Hernández,Arquitectura e Infraestructura,"neo_uC33,neo_uC34,neo_uC35,neo_uC36,neo_uC37,neo_uC38,neo_uC39,neo_uC40,neo_uC41,neo_uC42,neo_uC43,neo_uC44,neo_uC45,neo_uC46,neo_uC47,neo_uC48,neo_uC49,neo_uC50,neo_uC51,neo_uC52,neo_uC53,neo_uC54,neo_uC55,neo_uC56,neo_uC57,neo_uC58,neo_uC59,neo_uC60,neo_uC61,neo_uC62,neo_uC63,neo_uC64,neo_uC65,neo_uC66,neo_uC67,neo_uC68,neo_uC69,neo_uC70,neo_uC71,neo_uC72,neo_uC73,neo_uC74,neo_uC75,neo_uC76,neo_uC77,neo_uC78,neo_uC79,neo_uC80,neo_uC81,neo_uC82,neo_uC83,neo_uC84,neo_uC85,neo_uC86,neo_uC87,neo_uC88,neo_uC89,neo_uC90,neo_uC91,neo_uC92,neo_uC93,neo_uC94,neo_uC95,neo_uC96"
+PA4-AUT,Autómatas y lenguajes formales,Luis Carlos Guayacán Chaparro ,Algoritmos y procesamiento de señales,"neo_uC97,neo_uC98,neo_uC99,neo_uC100,neo_uC101,neo_uC102,neo_uC103"
+PA5-BAS,Base de Datos I,Nury Farelo Velásquez,Ingeniería de Software,
+PA6-BAS,Base de Datos II,Jathinson Meneses Mendoza,Ingeniería de Software,"neo_uC104,neo_uC105,neo_uC106,neo_uC107,neo_uC108,neo_uC109,neo_uC110,neo_uC111,neo_uC112,neo_uC113,neo_uC114,neo_uC115,neo_uC116,neo_uC117,neo_uC118,neo_uC119,neo_uC120,neo_uC121,neo_uC122,neo_uC123,neo_uC124,neo_uC125,neo_uC126,neo_uC127,neo_uC128,neo_uC129,neo_uC130,neo_uC131,neo_uC132,neo_uC133"
+PA7-BIO,Biología para Ingenieros,,Ciclo básico,
+PA8-CÁL,Cálculo I,,Ciclo básico,
+PA9-CÁL,Cálculo II,,Ciclo básico,
+PA10-CÁL,Cálculo III,,Ciclo básico,
+PA11-CUL,Cultura Física y Deportiva,,Ciclo básico,
+PA12-DIR,Dirección empresarial I,,Ciclo básico,
+PA13-ECO,Economía Empresarial,,Ciclo básico,
+PA14-ECU,Ecuaciones Diferenciales,,Ciclo básico,
+PA15-ELE,Electricidad y Electrónica,Luis Ignacio González Ramírez,Arquitectura e Infraestructura,"neo_uC134,neo_uC135,neo_uC136,neo_uC137,neo_uC138,neo_uC139,neo_uC140,neo_uC141,neo_uC142,neo_uC143,neo_uC144,neo_uC145,neo_uC146,neo_uC147,neo_uC148,neo_uC149,neo_uC150,neo_uC151,neo_uC152,neo_uC153,neo_uC154,neo_uC155,neo_uC156,neo_uC157,neo_uC158,neo_uC159,neo_uC160,neo_uC161"
+PA16-EST,Estadística I,Hoover Fabián Rueda Chacón,Analítica de datos,
+PA17-EST,Estadística II,David Edmundo Romo Bucheli,Analítica de datos,"neo_uC162,neo_uC163,neo_uC164,neo_uC165,neo_uC166,neo_uC167,neo_uC168,neo_uC169,neo_uC170,neo_uC171,neo_uC172"
+PA18-EST,Estructuras de datos y análisis de algoritmos,Hoover Fabián Rueda Chacón,Algoritmos y procesamiento de señales,"neo_uC173,neo_uC174,neo_uC175,neo_uC176,neo_uC177,neo_uC178,neo_uC179,neo_uC180,neo_uC181,neo_uC182,neo_uC183,neo_uC184,neo_uC185,neo_uC186,neo_uC187,neo_uC188,neo_uC189,neo_uC190,neo_uC191,neo_uC192,neo_uC193"
+PA19-ÉTI,Ética Ciudadana,,Ciclo básico,
+PA20-FÍS,Física I,,Ciclo básico,
+PA21-FÍS,Física II,,Ciclo básico,
+PA22-FÍS,Física III,,Ciclo básico,
+PA23-FUN,Fundamentos de Programación,Leonel Parra Pinilla,Sistemas organizacionales y de información,"neo_uC194,neo_uC195,neo_uC196,neo_uC197,neo_uC198,neo_uC199,neo_uC200,neo_uC201,neo_uC202,neo_uC203,neo_uC204,neo_uC205,neo_uC206"
+PA24-ING,Ingeniería del Software I,Gabriel Rodrigo Pedraza Ferreira,Ingeniería de Software,"neo_uC207,neo_uC208,neo_uC209,neo_uC210,neo_uC211,neo_uC212,neo_uC213,neo_uC214,neo_uC215,neo_uC216,neo_uC217,neo_uC218,neo_uC219,neo_uC220,neo_uC221,neo_uC222,neo_uC223,neo_uC224,neo_uC225,neo_uC226,neo_uC227,neo_uC228,neo_uC229,neo_uC230,neo_uC231,neo_uC232,neo_uC233,neo_uC234,neo_uC235,neo_uC236,neo_uC237,neo_uC238,neo_uC239"
+PA25-ING,Ingeniería del Software II,Emilio Justiniano Cárcamo Troconis,Ingeniería de Software,
+PA26-ING,Ingeniería Económica,,Ciclo básico,
+PA27-ING,Inglés I,,Ciclo básico,
+PA28-ING,Inglés II,,Ciclo básico,
+PA29-INT,Inteligencia Artificial I,Fabio Martínez Carrillo,Analítica de datos,"neo_uC240,neo_uC241,neo_uC242,neo_uC243,neo_uC244,neo_uC245,neo_uC246,neo_uC247,neo_uC248,neo_uC249,neo_uC250,neo_uC251,neo_uC252,neo_uC253,neo_uC254,neo_uC255,neo_uC256,neo_uC257,neo_uC258,neo_uC259,neo_uC260"
+PA30-MAT,Matemáticas discretas,Lola Xiomara Bautista Rozo,Algoritmos y procesamiento de señales,"neo_uC261,neo_uC262,neo_uC263,neo_uC264,neo_uC265,neo_uC266,neo_uC267,neo_uC268,neo_uC269,neo_uC270,neo_uC271,neo_uC272,neo_uC273"
+PA31-PEN,Pensamiento sistémico y organizacional,Hugo Hernando Andrade Sosa,Sistemas organizacionales y de información,
+PA32-PRO,Programación en la web,Manuel Guillermo Florez Becerra,Ingeniería de Software,
+PA33-PRO,Programación Orientada a Objetos,Fernando Antonio Rojas Morales,Ingeniería de Software,"neo_uC311,neo_uC312,neo_uC313,neo_uC314,neo_uC315,neo_uC316,neo_uC317,neo_uC318,neo_uC319,neo_uC320,neo_uC321,neo_uC322,neo_uC323,neo_uC324,neo_uC325,neo_uC326,neo_uC327,neo_uC328,neo_uC329,neo_uC330,neo_uC331,neo_uC332,neo_uC333,neo_uC334,neo_uC335,neo_uC336,neo_uC337,neo_uC338,neo_uC339,neo_uC340,neo_uC341,neo_uC342,neo_uC343,neo_uC344,neo_uC345,neo_uC346,neo_uC347,neo_uC348,neo_uC349,neo_uC350,neo_uC351,neo_uC352"
+PA34-QUÍ,Química Básica,,Ciclo básico,
+PA35-RED,Redes de Computadores I,John William Vásquez Capacho,Arquitectura e Infraestructura,"neo_uC353,neo_uC354,neo_uC355,neo_uC356,neo_uC357,neo_uC358,neo_uC359,neo_uC360,neo_uC361,neo_uC362,neo_uC363,neo_uC364,neo_uC365,neo_uC366,neo_uC367,neo_uC368,neo_uC369,neo_uC370,neo_uC371,neo_uC372,neo_uC373,neo_uC374,neo_uC375,neo_uC376,neo_uC377,neo_uC378,neo_uC379,neo_uC380,neo_uC381,neo_uC382,neo_uC383,neo_uC384"
+PA36-RED,Redes de computadores II,John William Vásquez Capacho,Arquitectura e Infraestructura,"neo_uC385,neo_uC386,neo_uC387,neo_uC388,neo_uC389,neo_uC390,neo_uC391,neo_uC392,neo_uC393,neo_uC394,neo_uC395,neo_uC396,neo_uC397,neo_uC398,neo_uC399,neo_uC400,neo_uC401,neo_uC402,neo_uC403,neo_uC404,neo_uC405,neo_uC406,neo_uC407,neo_uC408,neo_uC409,neo_uC410,neo_uC411,neo_uC412,neo_uC413,neo_uC414,neo_uC415,neo_uC416,neo_uC417,neo_uC418,neo_uC419,neo_uC420"
+PA37-SIM,Simulación Digital,David Edmundo Romo Bucheli,Analítica de datos,"neo_uC421,neo_uC422,neo_uC423,neo_uC424,neo_uC425,neo_uC426,neo_uC427,neo_uC428,neo_uC429,neo_uC430,neo_uC431,neo_uC432,neo_uC433,neo_uC434"
+PA38-SIS,Sistemas de Información,Luis Carlos Gómez Flórez,Sistemas organizacionales y de información,
+PA39-SIS,Sistemas digitales,Luis Ignacio González Ramírez,Arquitectura e Infraestructura,
+PA40-SIS,Sistemas Operacionales,Manuel Guillermo Florez Becerra,Arquitectura e Infraestructura,"neo_uC435,neo_uC436,neo_uC437,neo_uC438,neo_uC439,neo_uC440,neo_uC441,neo_uC442,neo_uC443,neo_uC444,neo_uC445,neo_uC446,neo_uC447,neo_uC448,neo_uC449,neo_uC450,neo_uC451,neo_uC452"
+PA41-TAL,Taller de Lenguaje,,Ciclo básico,
+PA42-VID,Vida y cultura universitaria,,Ciclo básico,
+PA43-MOD,Modelos de negocios en la sociedad de la información,Sonia Cristina Gamboa Sarmiento,Electiva,"neo_uC274,neo_uC275,neo_uC276,neo_uC277,neo_uC278,neo_uC279,neo_uC280,neo_uC281,neo_uC282,neo_uC283,neo_uC284,neo_uC285,neo_uC286,neo_uC287,neo_uC288,neo_uC289,neo_uC290,neo_uC291,neo_uC292,neo_uC293,neo_uC294,neo_uC295,neo_uC296,neo_uC297,neo_uC298,neo_uC299,neo_uC300,neo_uC301,neo_uC302,neo_uC303,neo_uC304,neo_uC305,neo_uC306,neo_uC307,neo_uC308,neo_uC309,neo_uC310"
+PA44-MOD,Modelado Estructural,Hugo Hernando Andrade Sosa,Electiva,"neo_uC453,neo_uC454,neo_uC455,neo_uC456,neo_uC457,neo_uC458,neo_uC459,neo_uC460,neo_uC461,neo_uC462,neo_uC463,neo_uC464,neo_uC465,neo_uC466,neo_uC467"

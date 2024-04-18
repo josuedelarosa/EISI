@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": 1, "id": "RA1", "label": "RA1", "level": 1, "shape": "dot", "size": 200, "title": "RA1\nDescripci\u00f3n:Habilidad para identificar, formular y resolver problemas complejos de ingenier\u00eda, aplicando principios de ingenier\u00eda, ciencias y matem\u00e1ticas\nProfesor L\u00edder:Henry Arguello Fuentes"}, {"group": 1, "id": "RA2", "label": "RA2", "level": 1, "shape": "dot", "size": 200, "title": "RA2\nDescripci\u00f3n:Habilidad para aplicar el dise\u00f1o de ingenier\u00eda en la obtenci\u00f3n de soluciones que satisfagan necesidades espec\u00edficas considerando salud p\u00fablica, seguridad, y bienestar, as\u00ed como factores globales, culturales, sociales, ambientales y econ\u00f3micos\nProfesor L\u00edder:Luis Carlos G\u00f3mez Fl\u00f3rez"}, {"group": 1, "id": "RA3", "label": "RA3", "level": 1, "shape": "dot", "size": 200, "title": "RA3\nDescripci\u00f3n:Habilidad para comunicarse efectivamente con un rango de audiencias\nProfesor L\u00edder:Manuel Guillermo Florez Becerra"}, {"group": 1, "id": "RA4", "label": "RA4", "level": 1, "shape": "dot", "size": 200, "title": "RA4\nDescripci\u00f3n:Habilidad para reconocer responsabilidades \u00e9ticas y profesionales en situaciones de ingenier\u00eda y hacer juicios informados en los que se consideren los impactos de las soluciones de ingenier\u00eda en contextos globales, econ\u00f3micos, ambientales y sociales\nProfesor L\u00edder:Sonia Cristina Gamboa Sarmiento,Hoover Fabi\u00e1n Rueda Chac\u00f3n"}, {"group": 1, "id": "RA5", "label": "RA5", "level": 1, "shape": "dot", "size": 200, "title": "RA5\nDescripci\u00f3n:Habilidad para funcionar efectivamente en un equipo cuyos miembros en conjunto proporcionen liderazgo, creen un ambiente colaborativo e inclusivo, establezcan metas, planifiquen tareas y cumplan objetivos\nProfesor L\u00edder:David Edmundo Romo Bucheli"}, {"group": 1, "id": "RA6", "label": "RA6", "level": 1, "shape": "dot", "size": 200, "title": "RA6\nDescripci\u00f3n:Habilidad para desarrollar y llevar a cabo experimentaci\u00f3n adecuada, analizar e interpretar datos, y utilizar juicios basados en principios de ingenier\u00eda para generar conclusiones\nProfesor L\u00edder:Fabio Mart\u00ednez Carrillo"}, {"group": 1, "id": "RA7", "label": "RA7", "level": 1, "shape": "dot", "size": 200, "title": "RA7\nDescripci\u00f3n:Habilidad para adquirir y aplicar nuevo conocimiento seg\u00fan sea necesario, utilizando estrategias apropiadas de aprendizaje\nProfesor L\u00edder:Carlos Jaime Barrios Hern\u00e1ndez"}, {"group": 2, "id": "MC1", "label": "MC1", "level": 2, "shape": "dot", "size": 200, "title": "MC1\nReconoce los problemas de las organizaciones que son susceptibles de ser abordadas aplicando principios de ingenier\u00eda para encontrar una soluci\u00f3n optimizada"}, {"group": 2, "id": "MC2", "label": "MC2", "level": 2, "shape": "dot", "size": 200, "title": "MC2\nFormula en un lenguaje claro y preciso el contexto (la distancia que hay entre la situaci\u00f3n actual y la situaci\u00f3n deseada), los elementos, los criterios y las restricciones que constituyen un problema"}, {"group": 2, "id": "MC3", "label": "MC3", "level": 2, "shape": "dot", "size": 200, "title": "MC3\nModela computacionalmente soluciones para problemas organizacionales usando principios de ingenier\u00eda y de ciencia"}, {"group": 2, "id": "MC4", "label": "MC4", "level": 2, "shape": "dot", "size": 200, "title": "MC4\nAnaliza problemas espec\u00edficos de una organizaci\u00f3n y propone dise\u00f1os apropiados para resolverlos"}, {"group": 2, "id": "MC5", "label": "MC5", "level": 2, "shape": "dot", "size": 200, "title": "MC5\nDise\u00f1a soluciones computacionales adecuadas a las necesidades espec\u00edficas de las organizaciones basados en estrategias de dise\u00f1o en ingenier\u00eda"}, {"group": 2, "id": "MC6", "label": "MC6", "level": 2, "shape": "dot", "size": 200, "title": "MC6\nEval\u00faa el impacto de las alternativas de soluci\u00f3n en contextos globales, teniendo en cuenta factores t\u00e9cnicos, culturales, sociales, ambientales y econ\u00f3micos"}, {"group": 2, "id": "MC7", "label": "MC7", "level": 2, "shape": "dot", "size": 200, "title": "MC7\nComunica efectivamente a diversas audiencias los conceptos, problemas y propuestas de soluci\u00f3n de ingenier\u00eda de sistemas"}, {"group": 2, "id": "MC8", "label": "MC8", "level": 2, "shape": "dot", "size": 200, "title": "MC8\nEjecuta los compromisos y roles adquiridos en grupos de trabajo"}, {"group": 2, "id": "MC9", "label": "MC9", "level": 2, "shape": "dot", "size": 200, "title": "MC9\nReconoce y comprende los deberes, principios \u00e9ticos y c\u00f3digos de conducta reconocidas para su profesi\u00f3n"}, {"group": 2, "id": "MC10", "label": "MC10", "level": 2, "shape": "dot", "size": 200, "title": "MC10\nEval\u00faa el impacto econ\u00f3mico, social y ambiental que se deriva de la ejecuci\u00f3n de proyectos de ingenier\u00eda de sistemas"}, {"group": 2, "id": "MC11", "label": "MC11", "level": 2, "shape": "dot", "size": 200, "title": "MC11\nTrabaja en equipo, estableciendo objetivos y asumiendo diferentes roles, para planear y ejecutar efectivamente las actividades requeridas en la soluci\u00f3n de problemas"}, {"group": 2, "id": "MC12", "label": "MC12", "level": 2, "shape": "dot", "size": 200, "title": "MC12\nUtiliza adecuadamente herramientas colaborativas para la formulaci\u00f3n, planeaci\u00f3n, coordinaci\u00f3n, seguimiento, desarrollo y documentaci\u00f3n de proyectos de ingenier\u00eda que requieren de trabajo en equipo"}, {"group": 2, "id": "MC13", "label": "MC13", "level": 2, "shape": "dot", "size": 200, "title": "MC13\nAplica fundamentos estad\u00edsticos y computacionales para la representaci\u00f3n, an\u00e1lisis e interpretaci\u00f3n de datos brindando lineamientos y soporte para la toma de decisiones"}, {"group": 2, "id": "MC14", "label": "MC14", "level": 2, "shape": "dot", "size": 200, "title": "MC14\nPropone soluciones basado en el an\u00e1lisis e interpretaci\u00f3n de datos, reconociendo las ventajas y limitaciones de los modelos implementados"}, {"group": 2, "id": "MC15", "label": "MC15", "level": 2, "shape": "dot", "size": 200, "title": "MC15\nMide e interpreta el desempe\u00f1o de una soluci\u00f3n computacional bajo esquemas rigurosos de experimentaci\u00f3n para su validaci\u00f3n"}, {"group": 2, "id": "MC16", "label": "MC16", "level": 2, "shape": "dot", "size": 200, "title": "MC16\nAprende de forma efectiva nuevos conocimientos necesarios para su desarrollo profesional"}, {"group": 2, "id": "MC17", "label": "MC17", "level": 2, "shape": "dot", "size": 200, "title": "MC17\nIdentifica necesidades personales de aprendizaje para el ejercicio de su profesi\u00f3n"}, {"group": 3, "id": "neo_uC1", "label": "neo_uC1", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC1\nIdentifica m\u00e9todos matem\u00e1ticos que pueden ser utilizados para solucionar un problema determinado."}, {"group": 3, "id": "neo_uC2", "label": "neo_uC2", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC2\nDetermina las variables de un problema para ser resuelto por medio de m\u00e9todos num\u00e9ricos."}, {"group": 3, "id": "neo_uC3", "label": "neo_uC3", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC3\nTransforma limitaciones de problemas f\u00edsicos y matem\u00e1ticos en restricciones de un algoritmo."}, {"group": 3, "id": "neo_uC4", "label": "neo_uC4", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC4\nFormula un algoritmo computacional para la soluci\u00f3n de problemas matem\u00e1ticos de forma iterativa."}, {"group": 3, "id": "neo_uC5", "label": "neo_uC5", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC5\nModela problemas de ingenier\u00eda mediante sistemas lineales de matrices para optimizar su an\u00e1lisis."}, {"group": 3, "id": "neo_uC6", "label": "neo_uC6", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC6\nDetermina la precisi\u00f3n y complejidad computacional de un algoritmo iterativo para optimizar su rendimiento."}, {"group": 3, "id": "neo_uC7", "label": "neo_uC7", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC7\nEstablece y adec\u00faa los modelos matem\u00e1ticos m\u00e1s apropiados para resolver un problema de ingenier\u00eda. "}, {"group": 3, "id": "neo_uC8", "label": "neo_uC8", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC8\nDetermina el algoritmo computacional mas adecuado para solucionar un problema de una organizaci\u00f3n."}, {"group": 3, "id": "neo_uC9", "label": "neo_uC9", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC9\nPropone los costos computacionales de un algoritmo para ser tenidos en cuenta por una organizaci\u00f3n. "}, {"group": 3, "id": "neo_uC10", "label": "neo_uC10", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC10\nDetermina el algoritmo mas apropiado de acuerdo a los recursos computacionales de las organizaciones para optimizar la utilizaci\u00f3n del mismo.  "}, {"group": 3, "id": "neo_uC11", "label": "neo_uC11", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC11\nEval\u00faa el uso de aproximaciones de problemas complejos de ingenier\u00eda para la simplificaci\u00f3n de los mismos con el fin de aumentar su uso dentro de las organizaciones de acuerdo a sus limitaciones en recursos computacionales."}, {"group": 3, "id": "neo_uC12", "label": "neo_uC12", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC12\nDise\u00f1a soluciones computacionales que reducen el consumo de energ\u00eda o las adapta para tener en cuenta restricciones culturales, sociales o ambientales."}, {"group": 3, "id": "neo_uC13", "label": "neo_uC13", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC13\nPresenta a sus compa\u00f1eros los resultados de sus an\u00e1lisis matem\u00e1ticos."}, {"group": 3, "id": "neo_uC14", "label": "neo_uC14", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC14\nRealiza presentaciones orales o escritas de los resultados de aplicar los m\u00e9todos matem\u00e1ticos para resolver problemas de ingenier\u00eda."}, {"group": 3, "id": "neo_uC15", "label": "neo_uC15", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC15\nDiscute las soluciones planteadas por el mismo o por sus compa\u00f1eros a problemas de ingenier\u00eda."}, {"group": 3, "id": "neo_uC16", "label": "neo_uC16", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC16\nDesempe\u00f1a labores de an\u00e1lisis, dise\u00f1o o programaci\u00f3n dentro de un trabajo en grupo para la soluci\u00f3n de un problema de an\u00e1lisis num\u00e9rico. "}, {"group": 3, "id": "neo_uC17", "label": "neo_uC17", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC17\nDetermina que las soluciones computacionales tienen limites que deben ser conocidos por los usuarios al momento de su utilizaci\u00f3n."}, {"group": 3, "id": "neo_uC18", "label": "neo_uC18", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC18\nReconoce que debe darse el respectivo cr\u00e9dito a los desarrolladores de las soluciones computacionales y sus respectivos m\u00e9todos matem\u00e1ticos."}, {"group": 3, "id": "neo_uC19", "label": "neo_uC19", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC19\nCalcula el costo computacional y su respectiva relaci\u00f3n con el costo econ\u00f3mico de un algoritmo computacional."}, {"group": 3, "id": "neo_uC20", "label": "neo_uC20", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC20\nDetermina los l\u00edmites de precisi\u00f3n de un algoritmo computacional y su respectivo impacto econ\u00f3mico."}, {"group": 3, "id": "neo_uC21", "label": "neo_uC21", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC21\nEval\u00faa la soluci\u00f3n matem\u00e1tica m\u00e1s apropiada para disminuir el consumo de recursos computacionales y energ\u00e9ticos."}, {"group": 3, "id": "neo_uC22", "label": "neo_uC22", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC22\nRealiza la soluci\u00f3n de problemas que requieran an\u00e1lisis num\u00e9rico mediante trabajo en equipo donde divide las tareas de acuerdo con el m\u00e9todo num\u00e9rico utilizado."}, {"group": 3, "id": "neo_uC23", "label": "neo_uC23", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC23\nDesarrolla algoritmos computacionales de forma colaborativa mediante herramientas de comunicaci\u00f3n en l\u00ednea."}, {"group": 3, "id": "neo_uC24", "label": "neo_uC24", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC24\nUtiliza herramientas de comunicaci\u00f3n colaborativa para el desarrollo de proyectos de aplicaci\u00f3n de los m\u00e9todos computacionales vistos en clase."}, {"group": 3, "id": "neo_uC25", "label": "neo_uC25", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC25\nUtiliza herramientas tecnol\u00f3gicas para la presentaci\u00f3n de resultados de proyectos de clase."}, {"group": 3, "id": "neo_uC26", "label": "neo_uC26", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC26\nDetermina las restricciones de un algoritmo computacional para solucionar un problema determinado."}, {"group": 3, "id": "neo_uC27", "label": "neo_uC27", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC27\nAnaliza los resultados de diversos algoritmos computacionales para seleccionar el m\u00e1s adecuado para solucionar un problema determinado."}, {"group": 3, "id": "neo_uC28", "label": "neo_uC28", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC28\nDetermina la complejidad computacional de un algoritmo computacional y su relaci\u00f3n con el desempe\u00f1o del mismo."}, {"group": 3, "id": "neo_uC29", "label": "neo_uC29", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC29\nSelecciona el algoritmo computacional m\u00e1s eficiente para solucionar un problema de ingenier\u00eda."}, {"group": 3, "id": "neo_uC30", "label": "neo_uC30", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC30\nDetermina los requerimientos computacionales para implementar un algoritmo determinado."}, {"group": 3, "id": "neo_uC31", "label": "neo_uC31", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC31\nComprende m\u00e9todos matem\u00e1ticos nuevos para ser utilizados dentro de su carrera profesional."}, {"group": 3, "id": "neo_uC32", "label": "neo_uC32", "level": 3, "shape": "dot", "size": 200, "title": "neo_uC32\nReconoce nuevos algoritmos computacionales para soluci\u00f3n de problemas de ingenier\u00eda que involucren el an\u00e1lisis num\u00e9rico. "}]);
+                  edges = new vis.DataSet([{"from": "MC1", "to": "RA1"}, {"from": "MC1", "to": "RA3"}, {"from": "MC2", "to": "RA1"}, {"from": "MC2", "to": "RA3"}, {"from": "MC2", "to": "RA7"}, {"from": "MC3", "to": "RA1"}, {"from": "MC3", "to": "RA2"}, {"from": "MC3", "to": "RA6"}, {"from": "MC4", "to": "RA2"}, {"from": "MC4", "to": "RA1"}, {"from": "MC5", "to": "RA2"}, {"from": "MC5", "to": "RA7"}, {"from": "MC6", "to": "RA2"}, {"from": "MC6", "to": "RA7"}, {"from": "MC7", "to": "RA3"}, {"from": "MC7", "to": "RA1"}, {"from": "MC7", "to": "RA6"}, {"from": "MC8", "to": "RA4"}, {"from": "MC8", "to": "RA5"}, {"from": "MC9", "to": "RA4"}, {"from": "MC9", "to": "RA7"}, {"from": "MC10", "to": "RA4"}, {"from": "MC10", "to": "RA6"}, {"from": "MC11", "to": "RA5"}, {"from": "MC11", "to": "RA7"}, {"from": "MC11", "to": "RA3"}, {"from": "MC12", "to": "RA5"}, {"from": "MC12", "to": "RA7"}, {"from": "MC12", "to": "RA3"}, {"from": "MC13", "to": "RA6"}, {"from": "MC13", "to": "RA3"}, {"from": "MC14", "to": "RA6"}, {"from": "MC14", "to": "RA3"}, {"from": "MC14", "to": "RA4"}, {"from": "MC15", "to": "RA6"}, {"from": "MC15", "to": "RA4"}, {"from": "MC16", "to": "RA7"}, {"from": "MC16", "to": "RA3"}, {"from": "MC17", "to": "RA7"}, {"from": "MC17", "to": "RA4"}, {"from": "MC17", "to": "RA5"}, {"from": "neo_uC1", "to": "MC1"}, {"from": "neo_uC2", "to": "MC2"}, {"from": "neo_uC3", "to": "MC2"}, {"from": "neo_uC4", "to": "MC3"}, {"from": "neo_uC5", "to": "MC3"}, {"from": "neo_uC6", "to": "MC3"}, {"from": "neo_uC7", "to": "MC4"}, {"from": "neo_uC8", "to": "MC5"}, {"from": "neo_uC9", "to": "MC5"}, {"from": "neo_uC10", "to": "MC6"}, {"from": "neo_uC11", "to": "MC6"}, {"from": "neo_uC12", "to": "MC6"}, {"from": "neo_uC13", "to": "MC7"}, {"from": "neo_uC14", "to": "MC7"}, {"from": "neo_uC15", "to": "MC7"}, {"from": "neo_uC16", "to": "MC8"}, {"from": "neo_uC17", "to": "MC9"}, {"from": "neo_uC18", "to": "MC9"}, {"from": "neo_uC19", "to": "MC10"}, {"from": "neo_uC20", "to": "MC10"}, {"from": "neo_uC21", "to": "MC10"}, {"from": "neo_uC22", "to": "MC11"}, {"from": "neo_uC23", "to": "MC12"}, {"from": "neo_uC24", "to": "MC12"}, {"from": "neo_uC25", "to": "MC12"}, {"from": "neo_uC26", "to": "MC14"}, {"from": "neo_uC27", "to": "MC14"}, {"from": "neo_uC28", "to": "MC15"}, {"from": "neo_uC29", "to": "MC15"}, {"from": "neo_uC30", "to": "MC15"}, {"from": "neo_uC31", "to": "MC16"}, {"from": "neo_uC32", "to": "MC17"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"layout": {"hierarchical": {"direction": "LR", "levelSeparation": 8000, "nodeSpacing": 600, "treeSpacing": 400, "blockShifting": true, "edgeMinimization": true, "parentCentralization": true}, "improvedLayout": true}, "physics": {"enabled": false}, "edges": {"width": 20.0}, "nodes": {"font": {"size": 130}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
